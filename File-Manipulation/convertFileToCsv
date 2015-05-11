@@ -1,0 +1,17 @@
+Sub convertFileToCsv(fileToConvert)
+
+Workbooks.Open Filename:=fileToConvert
+
+fileToConvert = "C:\Temporary\projectionFile" & ".csv"
+If Len(Dir(fileToConvert)) > 0 Then Kill fileToConvert
+
+ActiveWorkbook.SaveAs Filename:= _
+fileToConvert, FileFormat:=xlCSV _
+, CreateBackup:=False
+
+
+Application.DisplayAlerts = False
+Workbooks(ActiveWorkbook.Name).Close
+Application.DisplayAlerts = True
+
+End Sub
