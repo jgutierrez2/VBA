@@ -1,0 +1,10 @@
+Sub createFolder(folderPath)
+'FolderPath in form of "C:\folderName"
+
+Set FSO = CreateObject("scripting.filesystemobject")
+
+If FSO.FolderExists(folderPath) = False Then
+    MkDir folderPath
+End If
+
+End Sub
