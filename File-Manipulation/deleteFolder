@@ -1,0 +1,9 @@
+Sub deleteFolder(folderPath)
+'FolderPath in form of "C:\folderName"
+
+folderPath = folderPath & "\"
+If Dir(folderPath & "*.*") = "" Then
+    RmDir folderPath
+End If
+
+End Sub
