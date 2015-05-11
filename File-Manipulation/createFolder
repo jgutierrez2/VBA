@@ -1,1 +1,11 @@
+Sub copyFolder(fromPath, toPath)
 
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FolderExists(fromPath) = False Then
+    MsgBox fromPath & " doesn't exist"
+    Exit Sub
+End If
+
+FSO.copyFolder Source:=fromPath, Destination:=toPath
+
+End Sub
