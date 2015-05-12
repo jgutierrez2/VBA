@@ -1,0 +1,8 @@
+Function stringIsInArray(ByVal stringToBeFound As String, ByVal arr As Variant) As Boolean
+For Each element In arr
+    If element = stringToBeFound Then
+        stringIsInArray = True
+        Exit Function
+    End If
+Next element
+End Function
