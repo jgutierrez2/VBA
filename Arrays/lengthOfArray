@@ -1,0 +1,3 @@
+Function lengthOfArray(arr As Variant) As Integer
+    lengthOfArray = UBound(arr) - LBound(arr) + 1
+End Function
