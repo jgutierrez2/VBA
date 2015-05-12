@@ -1,8 +1,19 @@
-Function stringIsInArray(ByVal stringToBeFound As String, ByVal arr As Variant) As Boolean
+Function elementExists(ByVal toBeFound As Variant, ByVal arr As Variant, Optional ByRef index As Variant = Nothing) As Boolean
+Dim shouldIndex As Boolean
+
+shouldIndex = Not IsMissing(index)
+elementExists = False
+
+If shouldIndex Then index = LBound(arr)
+
 For Each element In arr
-    If element = stringToBeFound Then
-        stringIsInArray = True
+    If element = toBeFound Then
+        elementExists = True
         Exit Function
     End If
+    If shouldIndex Then index = index + 1
 Next element
+
+If shouldIndex Then index = LBound(arr) - 1
+
 End Function
