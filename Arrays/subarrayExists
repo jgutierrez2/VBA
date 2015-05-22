@@ -1,0 +1,17 @@
+Function subarrayExists(ByRef toSearch as Variant, ByRef subArr as Variant) as Boolean
+  Dim i as Long
+  Dim j as Long
+  
+  For i = Lbound(toSearch) to Ubound(toSearch)
+    subarrayExists = True
+    
+    For j = Lbound(subArr) to Ubound(subArr)
+      If Not (toSearch(i) = subArr(j)) Then
+        subarryExists = False
+        Exit For
+    Next j
+    
+    If subarryExists = True Then Exit For
+  Next i
+  
+End Function
